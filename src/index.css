@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&display=swap');
+
+
+:root {
+  font-size: 16px;
+  font-family: 'Fira Sans', sans-serif;
+  --text-primary: #EFEFEF;
+  --text-secondary: #07383C;
+  --bg-primary: #0A090C;
+  --bg-secondary: #1B2837;
+  --bg-tertiary: #90DDF0;
+  --transition-speed: 600ms;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+}
+
+section {
+  margin-left: 5rem;
+}
+
+/*Buttons*/
+
+.contextButton {
+  box-shadow: 0 0 5px var(--bg-tertiary),
+    0 0 25px var(--bg-tertiary);
+  background-color: var(--bg-tertiary);
+  border: none;
+  border-radius: 10px;
+  height: 45px;
+  width: 140px;
+
+  color: var(--bg-primary);
+  font-size: 1rem;
+  transition: all 0.6s;
+  margin-left: 10px;
+}
+
+.contextButton:hover {
+  box-shadow: 0 0 5px var(--bg-tertiary),
+    0 0 25px var(--bg-tertiary),
+    0 0 100px var(--bg-tertiary);
+}
+
+/*ScrollBar Nav*/
+
+.ScrollNav {
+  width: 5rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: var(--bg-primary);
+
+  border-right: solid var(--text-primary) 1px;
+
+  z-index: 1;
+}
+
+.ScrollNav-nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ScrollNav-item {
+  width: 100%;
+}
+
+
+.ScrollNav-nav-child {
+  margin-top: auto;
+}
+
+.ScrollLink {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  transition: all 600ms;
+}
+
+.nav-link svg {
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.ScrollFace:hover {
+  color: #0165E1;
+}
+
+.ScrollInsta:hover {
+  color: #C13584;
+}
+
+.ScrollLinke:hover {
+  color: #0e76a8;
+}
+
+/*Scroll NavBar Responsive*/
+
+/*Small Screens*/
+@media only screen and (max-width: 600px) {
+  .ScrollNav {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+    border-top: solid var(--text-primary) 1px;
+    border-right: none;
+  }
+
+  .ScrollNav-nav {
+    flex-direction: row;
+  }
+
+  .ScrollLink {
+    justify-content: space-between;
+    margin: 0px 3rem;
+  }
+}
+
+
+/*Header Principal*/
+
+.Header {
+  background-color: var(--bg-primary);
+  height: 150px;
+  width: 100%;
+  z-index: 2;
+  border-bottom: solid var(--text-primary) 1px;
+
+}
+
+.enlace {
+  position: absolute;
+  margin-left: 6rem;
+}
+
+.logo {
+  margin-top: 10px;
+  height: 120px;
+}
+
+.menu {
+  float: right;
+  margin-top: 60px;
+  margin-right: 20px;
+}
+
+.menu a {
+  color: var(--text-primary);
+  padding: 7px 13px;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+
+.checkbtn {
+  order: 1;
+}
+
+.menu a:hover,
+.checkbtn:hover,
+.esconder-menu:hover {
+  color: var(--bg-tertiary);
+}
+
+
+
+.checkbtn,
+.esconder-menu {
+  font-size: 30px;
+  color: var(--text-primary);
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+  transition: 0.4s;
+}
+
+#check {
+  display: none;
+}
+
+/*Responsive Header*/
+
+@media (max-width: 970px) {
+  .enlace {
+    padding-left: 20px;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 926px) {
+
+  .checkbtn,
+  .esconder-menu {
+    margin-top: 30px;
+    display: block;
+  }
+
+  .menu {
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-secondary);
+    margin-top: -155px;
+    left: -100%;
+    text-align: center;
+    padding: 100px 0px;
+    transition: 0.8s;
+  }
+
+  .menu a {
+    display: block;
+    padding: 20px;
+  }
+
+  .esconder-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  #check:checked~.menu {
+    left: 0;
+  }
+}
+
+/*Carrusel*/
+
+.Carrusel {
+  height: 500px;
+  margin-top: 5rem;
+  margin-left: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-wrap: wrap;
+}
+
+.New {
+  width: 50%;
+}
+
+.New h2 {
+  color: var(--text-primary);
+  font-size: 5rem;
+}
+
+#InfoNew {
+  font-size: 20px;
+  margin-top: 40px;
+  text-align: justify;
+  color: var(--text-primary);
+}
+
+.ControlsNew {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.ButtonsNew {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.NextNew{
+  margin-right: .5rem;
+}
+
+.PreviousNew{
+  margin-left: .5rem;
+}
+
+.NextNew, .PreviousNew{
+text-decoration: none;
+border: none;
+
+  width: 2rem;
+  height: 2rem;
+
+  font-size: 1.5rem;
+  border-radius: 100%;
+
+  background-color: var(--bg-tertiary);
+  transition: 0.5s;
+
+  box-shadow: 0 0 5px var(--bg-tertiary),
+    0 0 25px var(--bg-tertiary);
+  background-color: var(--bg-tertiary);
+}
+
+.NextNew:hover, .PreviousNew:hover{
+  background-color: var(--bg-secondary);
+
+  box-shadow: 0 0 5px var(--bg-tertiary),
+    0 0 25px var(--bg-tertiary),
+    0 0 100px var(--bg-tertiary);
+}
+
+#FirstNew{
+  margin-right: .5rem;
+}
+
+#LastNew{
+  margin-left: .5rem;
+}
+
+.NumberNew {
+  color: var(--text-primary);
+  font-size: 2rem;
+}
+
+.ProgressBar {
+  width: 138px;
+  height: 4px;
+  background-color: var(--text-primary);
+  display: flex;
+}
+
+#Bar1,#Bar2,#Bar3{
+  width: 46px;
+  height: 4px;
+}
+
+.BarActive{
+  background-color: var(--bg-tertiary);
+}
+
+.ImagesNew{
+  width: 552px;
+  height: 440px;
+  
+}
+
+.ImgNo{
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+
+  border-radius: 90px 0px 0px 0px;
+  object-fit: cover;
+}
+
+.ImgLoaded{
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  transition: 2s;
+  object-fit: cover;
+
+  border-radius: 90px 0px 0px 0px;
+}
